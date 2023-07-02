@@ -1,0 +1,143 @@
+# EZCool 4x2 HDMI Matrix RS232 Control
+
+# Find these in the manual or researched details
+# This is setup to use a ESP 8622 UART connecti, but can be configured for any device.
+# EZCoolAV 4x2 Matrix - https://www.easycoolav.com/products/hdmi-matrix-4x2-matrix-4-in-2-out-18gbps-mx42hs
+
+uart:
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+  baud_rate: 57600
+  id: uart_bus
+
+# RX read text as logging stream for home assistant
+text_sensor:
+- platform: custom
+  lambda: |-
+    auto my_custom_sensor = new UartReadLineSensor(id(uart_bus));
+    App.register_component(my_custom_sensor);
+    return {my_custom_sensor};
+  text_sensors:
+    id: "uart_readline"
+
+######################################
+# Button Control for matrix settings #
+######################################
+
+#################################
+# HDMI Output 1 Input Selection #
+#################################
+button:
+  - platform: uart
+    name: Out1/In1
+    icon: mdi:hdmi-port
+    id: out1_in1
+    data: EZS OUT1 VS IN1
+    on_press:
+      - logger.log: "OUT1 set to IN1"
+
+button:
+  - platform: uart
+    name: Out1/In2
+    icon: mdi:hdmi-port
+    id: out1_in2
+    data: EZS OUT1 VS IN2
+    on_press:
+      - logger.log: "OUT1 set to IN2"
+
+button:
+  - platform: uart
+    name: Out1/In3
+    icon: mdi:hdmi-port
+    id: out1_in3
+    data: EZS OUT1 VS IN3
+    on_press:
+      - logger.log: "OUT1 set to IN3"
+
+button:
+  - platform: uart
+    name: Out1/In4
+    icon: mdi:hdmi-port
+    id: out1_in4
+    data: EZS OUT1 VS IN4
+    on_press:
+      - logger.log: "OUT1 set to IN4"
+
+#################################
+# HDMI Output 2 Input Selection #
+#################################
+button:
+  - platform: uart
+    name: Out2/In1
+    icon: mdi:hdmi-port
+    id: out2_in1
+    data: EZS OUT2 VS IN1
+    on_press:
+      - logger.log: "OUT2 set to IN1"
+
+button:
+  - platform: uart
+    name: Out2/In2
+    icon: mdi:hdmi-port
+    id: out2_in2
+    data: EZS OUT2 VS IN2
+    on_press:
+      - logger.log: "OUT2 set to IN2"
+
+button:
+  - platform: uart
+    name: Out2/In3
+    icon: mdi:hdmi-port
+    id: out2_in3
+    data: EZS OUT2 VS IN3
+    on_press:
+      - logger.log: "OUT2 set to IN3"
+
+button:
+  - platform: uart
+    name: Out2/In4
+    icon: mdi:hdmi-port
+    id: out2_in4
+    data: EZS OUT2 VS IN4
+    on_press:
+      - logger.log: "OUT2 set to IN4"
+
+#################################
+# ALL HDMI Outs Input Selection #
+#################################
+
+button:
+  - platform: uart
+    name: ALL/In1
+    icon: mdi:hdmi-port
+    id: all_in1
+    data: EZS OUT0 VS IN1
+    on_press:
+      - logger.log: "ALL_OUT set to IN1"
+
+button:
+  - platform: uart
+    name: ALL/In2
+    icon: mdi:hdmi-port
+    id: all_in2
+    data: EZS OUT0 VS IN2
+    on_press:
+      - logger.log: "ALL_OUT set to IN2"
+
+button:
+  - platform: uart
+    name: ALL/In3
+    icon: mdi:hdmi-port
+    id: all_in3
+    data: EZS OUT0 VS IN3
+    on_press:
+      - logger.log: "ALL_OUT set to IN3"
+
+button:
+  - platform: uart
+    name: ALL/In4
+    icon: mdi:hdmi-port
+    id: all_in4
+    data: EZS OUT0 VS IN4
+    on_press:
+      - logger.log: "ALL_OUT set to IN4"
