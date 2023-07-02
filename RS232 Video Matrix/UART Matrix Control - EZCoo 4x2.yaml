@@ -1,8 +1,12 @@
 # EZCool 4x2 HDMI Matrix RS232 Control
 
 # Find these in the manual or researched details
-# This is setup to use a ESP 8622 UART connecti, but can be configured for any device.
+# This is setup to use a ESP 8622 UART connection, but can be configured for any device.
 # EZCoolAV 4x2 Matrix - https://www.easycoolav.com/products/hdmi-matrix-4x2-matrix-4-in-2-out-18gbps-mx42hs
+
+esphome:
+    includes:
+        - uart_read_line_sensor.h
 
 uart:
   tx_pin: GPIO1
@@ -11,6 +15,10 @@ uart:
   id: uart_bus
 
 # RX read text as logging stream for home assistant
+logger:
+    level: VERBOSE #makes uart stream available in esphome logstream
+    baud_rate: 0 #diable uart logging over uart
+
 text_sensor:
 - platform: custom
   lambda: |-
