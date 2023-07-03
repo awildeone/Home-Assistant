@@ -44,7 +44,6 @@ button:
     on_press:
       - logger.log: "OUT1 set to IN1"
 
-button:
   - platform: uart
     name: Out1/In2
     icon: mdi:hdmi-port
@@ -53,7 +52,6 @@ button:
     on_press:
       - logger.log: "OUT1 set to IN2"
 
-button:
   - platform: uart
     name: Out1/In3
     icon: mdi:hdmi-port
@@ -62,7 +60,6 @@ button:
     on_press:
       - logger.log: "OUT1 set to IN3"
 
-button:
   - platform: uart
     name: Out1/In4
     icon: mdi:hdmi-port
@@ -74,7 +71,6 @@ button:
 #################################
 # HDMI Output 2 Input Selection #
 #################################
-button:
   - platform: uart
     name: Out2/In1
     icon: mdi:hdmi-port
@@ -83,7 +79,6 @@ button:
     on_press:
       - logger.log: "OUT2 set to IN1"
 
-button:
   - platform: uart
     name: Out2/In2
     icon: mdi:hdmi-port
@@ -92,7 +87,6 @@ button:
     on_press:
       - logger.log: "OUT2 set to IN2"
 
-button:
   - platform: uart
     name: Out2/In3
     icon: mdi:hdmi-port
@@ -101,7 +95,6 @@ button:
     on_press:
       - logger.log: "OUT2 set to IN3"
 
-button:
   - platform: uart
     name: Out2/In4
     icon: mdi:hdmi-port
@@ -114,7 +107,6 @@ button:
 # ALL HDMI Outs Input Selection #
 #################################
 
-button:
   - platform: uart
     name: ALL/In1
     icon: mdi:hdmi-port
@@ -123,7 +115,6 @@ button:
     on_press:
       - logger.log: "ALL_OUT set to IN1"
 
-button:
   - platform: uart
     name: ALL/In2
     icon: mdi:hdmi-port
@@ -132,7 +123,6 @@ button:
     on_press:
       - logger.log: "ALL_OUT set to IN2"
 
-button:
   - platform: uart
     name: ALL/In3
     icon: mdi:hdmi-port
@@ -141,7 +131,6 @@ button:
     on_press:
       - logger.log: "ALL_OUT set to IN3"
 
-button:
   - platform: uart
     name: ALL/In4
     icon: mdi:hdmi-port
