@@ -18,25 +18,29 @@ cards:
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.out1_in1
+        name: In 1
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.out1_in2
+        name: In 2
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.out1_in3
+        name: In 3
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.out1_in4
+        name: In 4
   - square: true
     columns: 5
     type: grid
@@ -49,25 +53,29 @@ cards:
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.out2_in1
+        name: In 1
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.out2_in2
+        name: In 2
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.out2_in3
+        name: In 3
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.out2_in4
+        name: In 4
   - square: true
     columns: 5
     type: grid
@@ -80,22 +88,26 @@ cards:
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.all_in1
+        name: In 1
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.all_in2
+        name: In 2
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.all_in3
+        name: In 3
       - show_name: true
         show_icon: true
         type: button
         tap_action:
           action: toggle
-        entity: button.template_button
+        entity: button.all_in4
+        name: In 4
