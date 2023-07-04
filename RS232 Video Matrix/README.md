@@ -8,5 +8,5 @@ This project was set up as I have Sonos devices for eARC audio and do not want t
 - Multiple Serial Devices can be controlled through the ESP8266/ESP32. YMMV depending on which ESP you are using.
 - Easy to adapt to bigger matrixes
 
-##Keypad Card Example
+## Keypad Card Example
 ![Matrix Keypad](https://github.com/awildeone/Home-Assistant/blob/main/RS232%20Video%20Matrix/Matrix%20Grid%20Example.png)
