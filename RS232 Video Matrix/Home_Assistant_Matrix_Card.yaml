@@ -1,0 +1,101 @@
+# Requires Mushroom Cards
+
+square: false
+columns: 1
+type: grid
+cards:
+  - type: custom:mushroom-title-card
+    title: Video Matrix Control
+  - square: true
+    columns: 5
+    type: grid
+    cards:
+      - type: custom:mushroom-title-card
+        title: ''
+        subtitle: Living Room
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+  - square: true
+    columns: 5
+    type: grid
+    cards:
+      - type: custom:mushroom-title-card
+        title: ''
+        subtitle: Den
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+  - square: true
+    columns: 5
+    type: grid
+    cards:
+      - type: custom:mushroom-title-card
+        title: ''
+        subtitle: All Out
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: button.template_button
