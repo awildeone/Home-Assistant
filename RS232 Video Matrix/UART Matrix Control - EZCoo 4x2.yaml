@@ -5,19 +5,33 @@
 # EZCoolAV 4x2 Matrix - https://www.easycoolav.com/products/hdmi-matrix-4x2-matrix-4-in-2-out-18gbps-mx42hs
 
 esphome:
-    includes:
-        - uart_read_line_sensor.h
+  name: video-matrix-4x2
+  friendly_name: Video Matrix 4x2
+  includes:
+    - uart_read_line_sensor.h
 
+esp8266:
+  board: esp01_1m
+
+# Enable logging
+logger:
+    level: VERBOSE #makes uart stream available in esphome logstream
+    baud_rate: 0 #disable uart logging over uart
+
+###########This is where your ESP config lines go######
+
+
+
+
+#################
+
+captive_portal:
+    
 uart:
   tx_pin: GPIO1
   rx_pin: GPIO3
   baud_rate: 57600
   id: uart_bus
-
-# RX read text as logging stream for home assistant
-logger:
-    level: VERBOSE #makes uart stream available in esphome logstream
-    baud_rate: 0 #diable uart logging over uart
 
 text_sensor:
 - platform: custom
@@ -35,106 +49,111 @@ text_sensor:
 #################################
 # HDMI Output 1 Input Selection #
 #################################
+
 button:
-  - platform: uart
-    name: Out1/In1
+  - platform: template
+    name: "Out1/In1"
     icon: mdi:hdmi-port
     id: out1_in1
-    data: EZS OUT1 VS IN1
     on_press:
-      - logger.log: "OUT1 set to IN1"
-
-  - platform: uart
-    name: Out1/In2
+      then:
+        - uart.write: "EZS OUT1 VS IN1"
+        - logger.log: "OUT_1 set to IN1"
+  - platform: template
+    name: "Out1/In2"
     icon: mdi:hdmi-port
     id: out1_in2
-    data: EZS OUT1 VS IN2
     on_press:
-      - logger.log: "OUT1 set to IN2"
-
-  - platform: uart
-    name: Out1/In3
+      then:
+        - uart.write: "EZS OUT1 VS IN2"
+        - logger.log: "OUT_1 set to IN2"
+  - platform: template
+    name: "Out1/In3"
     icon: mdi:hdmi-port
     id: out1_in3
-    data: EZS OUT1 VS IN3
     on_press:
-      - logger.log: "OUT1 set to IN3"
-
-  - platform: uart
-    name: Out1/In4
+      then:
+        - uart.write: "EZS OUT1 VS IN3"
+        - logger.log: "OUT_1 set to IN3"
+  - platform: template
+    name: "Out1/In4"
     icon: mdi:hdmi-port
     id: out1_in4
-    data: EZS OUT1 VS IN4
     on_press:
-      - logger.log: "OUT1 set to IN4"
+      then:
+        - uart.write: "EZS OUT1 VS IN4"
+        - logger.log: "OUT_1 set to IN4"
 
 #################################
 # HDMI Output 2 Input Selection #
 #################################
-  - platform: uart
-    name: Out2/In1
+
+  - platform: template
+    name: "Out2/In1"
     icon: mdi:hdmi-port
     id: out2_in1
-    data: EZS OUT2 VS IN1
     on_press:
-      - logger.log: "OUT2 set to IN1"
-
-  - platform: uart
-    name: Out2/In2
+      then:
+        - uart.write: "EZS OUT2 VS IN1"
+        - logger.log: "OUT_2 set to IN1"
+  - platform: template
+    name: "Out2/In2"
     icon: mdi:hdmi-port
     id: out2_in2
-    data: EZS OUT2 VS IN2
     on_press:
-      - logger.log: "OUT2 set to IN2"
-
-  - platform: uart
-    name: Out2/In3
+      then:
+        - uart.write: "EZS OUT2 VS IN2"
+        - logger.log: "OUT_2 set to IN2"
+  - platform: template
+    name: "Out2/In3"
     icon: mdi:hdmi-port
     id: out2_in3
-    data: EZS OUT2 VS IN3
     on_press:
-      - logger.log: "OUT2 set to IN3"
-
-  - platform: uart
-    name: Out2/In4
+      then:
+        - uart.write: "EZS OUT2 VS IN3"
+        - logger.log: "OUT_2 set to IN3"
+  - platform: template
+    name: "Out2/In4"
     icon: mdi:hdmi-port
     id: out2_in4
-    data: EZS OUT2 VS IN4
     on_press:
-      - logger.log: "OUT2 set to IN4"
+      then:
+        - uart.write: "EZS OUT_2 VS IN4"
+        - logger.log: "OUT_2 set to IN4"
 
 #################################
 # ALL HDMI Outs Input Selection #
 #################################
 
-  - platform: uart
-    name: ALL/In1
+  - platform: template
+    name: "All/In1"
     icon: mdi:hdmi-port
     id: all_in1
-    data: EZS OUT0 VS IN1
     on_press:
-      - logger.log: "ALL_OUT set to IN1"
-
-  - platform: uart
-    name: ALL/In2
+      then:
+        - uart.write: "EZS OUT0 VS IN1"
+        - logger.log: "ALL_OUT set to IN1"
+  - platform: template
+    name: "All/In2"
     icon: mdi:hdmi-port
     id: all_in2
-    data: EZS OUT0 VS IN2
     on_press:
-      - logger.log: "ALL_OUT set to IN2"
-
-  - platform: uart
-    name: ALL/In3
-    icon: mdi:hdmi-port
+      then:
+        - uart.write: "EZS OUT0 VS IN2"
+        - logger.log: "ALL_OUT set to IN2"
+  - platform: template
+    name: "All/In3"
     id: all_in3
-    data: EZS OUT0 VS IN3
+    icon: mdi:hdmi-port
     on_press:
-      - logger.log: "ALL_OUT set to IN3"
-
-  - platform: uart
-    name: ALL/In4
+      then:
+        - uart.write: "EZS OUT0 VS IN3"
+        - logger.log: "ALL_OUT set to IN3"
+  - platform: template
+    name: "All/In4"
     icon: mdi:hdmi-port
     id: all_in4
-    data: EZS OUT0 VS IN4
     on_press:
-      - logger.log: "ALL_OUT set to IN4"
+      then:
+        - uart.write: "EZS OUT0 VS IN4"
+        - logger.log: "ALL_OUT set to IN4"
