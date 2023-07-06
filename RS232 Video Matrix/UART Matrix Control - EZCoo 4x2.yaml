@@ -57,7 +57,7 @@ button:
     id: out1_in1
     on_press:
       then:
-        - uart.write: "EZS OUT1 VS IN1"
+        - uart.write: "EZS OUT1 VS IN1\r\n"
         - logger.log: "OUT_1 set to IN1"
   - platform: template
     name: "Out1/In2"
@@ -65,7 +65,7 @@ button:
     id: out1_in2
     on_press:
       then:
-        - uart.write: "EZS OUT1 VS IN2"
+        - uart.write: "EZS OUT1 VS IN2\r\n"
         - logger.log: "OUT_1 set to IN2"
   - platform: template
     name: "Out1/In3"
@@ -73,7 +73,7 @@ button:
     id: out1_in3
     on_press:
       then:
-        - uart.write: "EZS OUT1 VS IN3"
+        - uart.write: "EZS OUT1 VS IN3\r\n"
         - logger.log: "OUT_1 set to IN3"
   - platform: template
     name: "Out1/In4"
@@ -81,7 +81,7 @@ button:
     id: out1_in4
     on_press:
       then:
-        - uart.write: "EZS OUT1 VS IN4"
+        - uart.write: "EZS OUT1 VS IN4\r\n"
         - logger.log: "OUT_1 set to IN4"
 
 #################################
@@ -94,7 +94,7 @@ button:
     id: out2_in1
     on_press:
       then:
-        - uart.write: "EZS OUT2 VS IN1"
+        - uart.write: "EZS OUT2 VS IN1\r\n"
         - logger.log: "OUT_2 set to IN1"
   - platform: template
     name: "Out2/In2"
@@ -102,7 +102,7 @@ button:
     id: out2_in2
     on_press:
       then:
-        - uart.write: "EZS OUT2 VS IN2"
+        - uart.write: "EZS OUT2 VS IN2\r\n"
         - logger.log: "OUT_2 set to IN2"
   - platform: template
     name: "Out2/In3"
@@ -110,7 +110,7 @@ button:
     id: out2_in3
     on_press:
       then:
-        - uart.write: "EZS OUT2 VS IN3"
+        - uart.write: "EZS OUT2 VS IN3\r\n"
         - logger.log: "OUT_2 set to IN3"
   - platform: template
     name: "Out2/In4"
@@ -118,7 +118,7 @@ button:
     id: out2_in4
     on_press:
       then:
-        - uart.write: "EZS OUT_2 VS IN4"
+        - uart.write: "EZS OUT2 VS IN4\r\n"
         - logger.log: "OUT_2 set to IN4"
 
 #################################
@@ -131,7 +131,7 @@ button:
     id: all_in1
     on_press:
       then:
-        - uart.write: "EZS OUT0 VS IN1"
+        - uart.write: "EZS OUT0 VS IN1\r\n"
         - logger.log: "ALL_OUT set to IN1"
   - platform: template
     name: "All/In2"
@@ -139,7 +139,7 @@ button:
     id: all_in2
     on_press:
       then:
-        - uart.write: "EZS OUT0 VS IN2"
+        - uart.write: "EZS OUT0 VS IN2\r\n"
         - logger.log: "ALL_OUT set to IN2"
   - platform: template
     name: "All/In3"
@@ -147,7 +147,7 @@ button:
     icon: mdi:hdmi-port
     on_press:
       then:
-        - uart.write: "EZS OUT0 VS IN3"
+        - uart.write: "EZS OUT0 VS IN3\r\n"
         - logger.log: "ALL_OUT set to IN3"
   - platform: template
     name: "All/In4"
@@ -155,5 +155,6 @@ button:
     id: all_in4
     on_press:
       then:
-        - uart.write: "EZS OUT0 VS IN4"
+        - uart.write: "EZS OUT0 VS IN4\r\n"
         - logger.log: "ALL_OUT set to IN4"
+
