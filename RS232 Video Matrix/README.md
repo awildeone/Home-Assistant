@@ -16,3 +16,4 @@ This project was set up as I have Sonos devices for eARC audio and do not want t
 - You have to include "character return" or "line feed" in double quotes for each uart.write command for it to send. Eg: uart.write: "This is foo\r\n".
   - It should be noted that you can type \r\n for character return. There are also hex value options that are included standard in YAML documentation. But thats for your own googling. All of mine are strings so using the above is my solution.
 - You need to use a level shifter (anything with a MAX3232 chip). RS232 is NOT the same voltage as TTL. While the config is the same, RS232 requires +/- 9v for control. TTL at max is 5v only.
+- The level shifters I bought have a weird quirk. The labels on the RX and TX labels are backward (normally TX goes to RX, etc). The level shifter is RX to RX, and TX to TX. Not hard, just required some continuity testing between the header pins and the MAX3232 chip.
