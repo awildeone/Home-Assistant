@@ -1,4 +1,5 @@
 # Home Assistant
  Files for configuring Home Assistant Devices
 
- - RS232 Video Matrix Control (Untested/In-Progress)
+ - RS232 Video Matrix Control (Working :white_check_mark:)
+ - ESPHome IR Blaster/Receiver template (upcoming)
