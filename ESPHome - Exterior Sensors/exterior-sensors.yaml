@@ -1,0 +1,112 @@
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  fast_connect: False
+
+one_wire:
+  - platform: gpio
+    pin: GPIO16
+
+i2c:
+  - id: bus_a
+    sda: GPIO21
+    scl: GPIO22
+    scan: True
+
+globals:
+  - id: ota_mode
+    type: bool
+    initial_value: 'false'
+
+output:
+  - platform: gpio
+    pin: GPIO5
+    id: blue_led
+    inverted: True
+
+mqtt:
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  birth_message:
+  will_message:
+  on_message:
+    - topic: esp/control/exterior/ota_mode
+      payload: 'ON'
+      then:
+        - deep_sleep.prevent: deep_sleep_1
+        - output.turn_on: blue_led
+
+    - topic: esp/control/exterior/ota_mode
+      payload: 'OFF'
+      then:
+        - deep_sleep.allow: deep_sleep_1
+        - output.turn_off: blue_led
+
+deep_sleep:
+  id: deep_sleep_1
+  run_duration: 20s
+  sleep_duration: 45min
+
+# LED TEST TRIGGER    
+#    - topic: led/trigger
+#      payload: "ON"
+#      then:
+#        - output.turn_on: blue_led
+#
+#    - topic: led/trigger
+#      payload: "OFF"
+#      then:
+#        - output.turn_off: blue_led
+
+sensor:
+  - platform: dallas_temp
+    name: "Ground Temperature"
+    unit_of_measurement: °C
+    accuracy_decimals: 1
+    update_interval: 5s
+    device_class: temperature
+    icon: mdi:temperature-celsius
+    qos: 1
+
+  - platform: veml7700
+    i2c_id: bus_a
+    address: 0x10
+    update_interval: 5s
+    ambient_light: 
+      name: "Ambient Light (Calibrated)"
+      qos: 1
+      filters:
+        - lambda: |- # Offset for the shaded cover of 49 percent reduction
+            return x * 1.49;
+
+  - platform: adc
+    name: "Moisture Probe"
+    pin: GPIO33
+    update_interval: 5s
+    unit_of_measurement: "%"
+    attenuation: 11db
+    filters:
+     - calibrate_linear:
+          - 3.13 -> 0    # Value when dry
+          - 1.10 -> 100  # Value when wet
+     - clamp: 
+         min_value: 0
+         max_value: 100
+    icon: mdi:grass
+  - platform: adc
+    name: "Battery Voltage"
+    pin: GPIO35
+    accuracy_decimals: 2
+    update_interval: 5s
+    attenuation: 12db
+    filters: 
+      - multiply: 2.0
+    qos: 1
+          
+  - platform: wifi_signal
+    name: "Wi-Fi Signal"
+    update_interval: 5s
+    icon: mdi:wifi
+    qos: 1
