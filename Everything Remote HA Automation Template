@@ -1,0 +1,305 @@
+alias: ESPHome Remote - Everything Remote1
+description: Automation for handling all 42 button presses with single and long types
+triggers:
+  - event_type: esphome.remote_button_pressed
+    trigger: event
+    event_data:
+      remote_id: everything_remote1
+conditions: []
+actions:
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'power' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 1 Power Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'power' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 2 Power Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'back' and trigger.event.data.type
+              == 'single' }}
+        sequence: []
+        alias: 3 Back Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'back' and trigger.event.data.type
+              == 'long' }}
+        sequence: []
+        alias: 4 Back Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'home' and trigger.event.data.type
+              == 'single' }}
+        sequence: []
+        alias: 5 Home Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'home' and trigger.event.data.type
+              == 'long' }}
+        sequence: []
+        alias: 6 Home Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'play_pause' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 7 Play Pause Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'play_pause' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 8 Play Pause Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'up' and trigger.event.data.type
+              == 'single' }}
+        sequence: []
+        alias: 9 Up Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'up' and trigger.event.data.type
+              == 'long' }}
+        sequence: []
+        alias: 10 Up Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'left' and trigger.event.data.type
+              == 'single' }}
+        sequence: []
+        alias: 11 Left Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'left' and trigger.event.data.type
+              == 'long' }}
+        sequence: []
+        alias: 12 Left Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'select_button' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 13 Select Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'select_button' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 14 Select Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'right' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 15 Right Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'right' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 16 Right Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'down' and trigger.event.data.type
+              == 'single' }}
+        sequence: []
+        alias: 17 Down Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'down' and trigger.event.data.type
+              == 'long' }}
+        sequence: []
+        alias: 18 Down Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'volume_up' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 19 Volume Up Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'volume_up' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 20 Volume Up Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'mute' and trigger.event.data.type
+              == 'single' }}
+        sequence: []
+        alias: 21 Mute Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'mute' and trigger.event.data.type
+              == 'long' }}
+        sequence: []
+        alias: 22 Mute Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'channel_up' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 23 Channel Up Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'channel_up' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 24 Channel Up Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'volume_down' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 25 Volume Down Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'volume_down' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 26 Volume Down Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'settings' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 27 Settings Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'settings' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 28 Settings Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'channel_down' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 29 Channel Down Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'channel_down' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 30 Channel Down Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'shortcut_3' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 31 Shortcut 3 Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'shortcut_3' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 32 Shortcut 3 Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'shortcut_4' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 33 Shortcut 4 Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'shortcut_4' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 34 Shortcut 4 Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'brightness_down' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 35 Brightness Down Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'brightness_down' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 36 Brightness Down Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'brightness_up' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 37 Brightness Up Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'brightness_up' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 38 Brightness Up Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'shortcut_1' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 39 Shortcut 1 Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'shortcut_1' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 40 Shortcut 1 Long
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'shortcut_2' and
+              trigger.event.data.type == 'single' }}
+        sequence: []
+        alias: 41 Shortcut 2 Single
+      - conditions:
+          - condition: template
+            value_template: >-
+              {{ trigger.event.data.button == 'shortcut_2' and
+              trigger.event.data.type == 'long' }}
+        sequence: []
+        alias: 42 Shortcut 2 Long
+mode: single
