@@ -1,6 +1,6 @@
 blueprint:
-  name: ESPHome Remote — Button Actions
-  description: Assign actions for all buttons of an ESPHome remote, with short and long press types.
+  name: ESPHome Remote — Full Button Actions
+  description: Assign actions for all 42 buttons of an ESPHome remote, supporting short and long presses.
   domain: automation
   input:
     remote_id:
@@ -10,7 +10,7 @@ blueprint:
       selector:
         text: {}
 
-    # ===== Define actions for all buttons =====
+    # ======================== BUTTON ACTIONS ========================
     power_single:
       name: Power — Short Press
       selector:
@@ -260,5 +260,203 @@ action:
             value_template: "{{ trigger.event.data.button == 'power' and trigger.event.data.type == 'long' }}"
         sequence:
           - !input power_long
-
       - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'back' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input back_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'back' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input back_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'home' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input home_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'home' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input home_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'play_pause' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input play_pause_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'play_pause' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input play_pause_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'up' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input up_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'up' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input up_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'down' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input down_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'down' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input down_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'left' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input left_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'left' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input left_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'right' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input right_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'right' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input right_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'select_button' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input select_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'select_button' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input select_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'volume_up' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input volume_up_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'volume_up' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input volume_up_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'volume_down' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input volume_down_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'volume_down' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input volume_down_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'mute' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input mute_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'mute' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input mute_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'channel_up' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input channel_up_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'channel_up' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input channel_up_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'channel_down' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input channel_down_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'channel_down' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input channel_down_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'settings' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input settings_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'settings' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input settings_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'brightness_up' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input brightness_up_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'brightness_up' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input brightness_up_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'brightness_down' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input brightness_down_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'brightness_down' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input brightness_down_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'shortcut_1' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input shortcut_1_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'shortcut_1' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input shortcut_1_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'shortcut_2' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input shortcut_2_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'shortcut_2' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input shortcut_2_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'shortcut_3' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input shortcut_3_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'shortcut_3' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input shortcut_3_long
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'shortcut_4' and trigger.event.data.type == 'single' }}"
+        sequence:
+          - !input shortcut_4_single
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.event.data.button == 'shortcut_4' and trigger.event.data.type == 'long' }}"
+        sequence:
+          - !input shortcut_4_long
