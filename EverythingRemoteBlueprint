@@ -1,243 +1,243 @@
 blueprint:
-  name: ESPHome Remote — Full Button Actions
-  description: Handle all button presses from an ESPHome remote with configurable actions for short and long press.
+  name: ESPHome Remote — Button Actions
+  description: Assign actions for all buttons of an ESPHome remote, with short and long press types.
   domain: automation
   input:
-    remote_device:
-      name: Remote Device
-      description: The ESPHome remote entity that sends button press events.
+    remote_id:
+      name: Remote ID
+      description: The remote ID from ESPHome to listen for
+      default: everything_remote1
       selector:
-        entity:
-          domain: sensor
+        text: {}
 
-    # ===== BUTTON ACTIONS =====
-    power_short:
-      name: Power Button — Short Press Action
+    # ===== Define actions for all buttons =====
+    power_single:
+      name: Power — Short Press
       selector:
         action: {}
       default: []
     power_long:
-      name: Power Button — Long Press Action
+      name: Power — Long Press
       selector:
         action: {}
       default: []
 
-    back_short:
-      name: Back Button — Short Press Action
+    back_single:
+      name: Back — Short Press
       selector:
         action: {}
       default: []
     back_long:
-      name: Back Button — Long Press Action
+      name: Back — Long Press
       selector:
         action: {}
       default: []
 
-    home_short:
-      name: Home Button — Short Press Action
+    home_single:
+      name: Home — Short Press
       selector:
         action: {}
       default: []
     home_long:
-      name: Home Button — Long Press Action
+      name: Home — Long Press
       selector:
         action: {}
       default: []
 
-    play_pause_short:
-      name: Play/Pause Button — Short Press Action
+    play_pause_single:
+      name: Play/Pause — Short Press
       selector:
         action: {}
       default: []
     play_pause_long:
-      name: Play/Pause Button — Long Press Action
+      name: Play/Pause — Long Press
       selector:
         action: {}
       default: []
 
-    up_short:
-      name: Up Button — Short Press Action
+    up_single:
+      name: Up — Short Press
       selector:
         action: {}
       default: []
     up_long:
-      name: Up Button — Long Press Action
+      name: Up — Long Press
       selector:
         action: {}
       default: []
 
-    down_short:
-      name: Down Button — Short Press Action
+    down_single:
+      name: Down — Short Press
       selector:
         action: {}
       default: []
     down_long:
-      name: Down Button — Long Press Action
+      name: Down — Long Press
       selector:
         action: {}
       default: []
 
-    left_short:
-      name: Left Button — Short Press Action
+    left_single:
+      name: Left — Short Press
       selector:
         action: {}
       default: []
     left_long:
-      name: Left Button — Long Press Action
+      name: Left — Long Press
       selector:
         action: {}
       default: []
 
-    right_short:
-      name: Right Button — Short Press Action
+    right_single:
+      name: Right — Short Press
       selector:
         action: {}
       default: []
     right_long:
-      name: Right Button — Long Press Action
+      name: Right — Long Press
       selector:
         action: {}
       default: []
 
-    select_short:
-      name: Select Button — Short Press Action
+    select_single:
+      name: Select — Short Press
       selector:
         action: {}
       default: []
     select_long:
-      name: Select Button — Long Press Action
+      name: Select — Long Press
       selector:
         action: {}
       default: []
 
-    volume_up_short:
-      name: Volume Up — Short Press Action
+    volume_up_single:
+      name: Volume Up — Short Press
       selector:
         action: {}
       default: []
     volume_up_long:
-      name: Volume Up — Long Press Action
+      name: Volume Up — Long Press
       selector:
         action: {}
       default: []
 
-    volume_down_short:
-      name: Volume Down — Short Press Action
+    volume_down_single:
+      name: Volume Down — Short Press
       selector:
         action: {}
       default: []
     volume_down_long:
-      name: Volume Down — Long Press Action
+      name: Volume Down — Long Press
       selector:
         action: {}
       default: []
 
-    mute_short:
-      name: Mute — Short Press Action
+    mute_single:
+      name: Mute — Short Press
       selector:
         action: {}
       default: []
     mute_long:
-      name: Mute — Long Press Action
+      name: Mute — Long Press
       selector:
         action: {}
       default: []
 
-    channel_up_short:
-      name: Channel Up — Short Press Action
+    channel_up_single:
+      name: Channel Up — Short Press
       selector:
         action: {}
       default: []
     channel_up_long:
-      name: Channel Up — Long Press Action
+      name: Channel Up — Long Press
       selector:
         action: {}
       default: []
 
-    channel_down_short:
-      name: Channel Down — Short Press Action
+    channel_down_single:
+      name: Channel Down — Short Press
       selector:
         action: {}
       default: []
     channel_down_long:
-      name: Channel Down — Long Press Action
+      name: Channel Down — Long Press
       selector:
         action: {}
       default: []
 
-    settings_short:
-      name: Settings — Short Press Action
+    settings_single:
+      name: Settings — Short Press
       selector:
         action: {}
       default: []
     settings_long:
-      name: Settings — Long Press Action
+      name: Settings — Long Press
       selector:
         action: {}
       default: []
 
-    brightness_up_short:
-      name: Brightness Up — Short Press Action
+    brightness_up_single:
+      name: Brightness Up — Short Press
       selector:
         action: {}
       default: []
     brightness_up_long:
-      name: Brightness Up — Long Press Action
+      name: Brightness Up — Long Press
       selector:
         action: {}
       default: []
 
-    brightness_down_short:
-      name: Brightness Down — Short Press Action
+    brightness_down_single:
+      name: Brightness Down — Short Press
       selector:
         action: {}
       default: []
     brightness_down_long:
-      name: Brightness Down — Long Press Action
+      name: Brightness Down — Long Press
       selector:
         action: {}
       default: []
 
-    shortcut_1_short:
-      name: Shortcut 1 — Short Press Action
+    shortcut_1_single:
+      name: Shortcut 1 — Short Press
       selector:
         action: {}
       default: []
     shortcut_1_long:
-      name: Shortcut 1 — Long Press Action
+      name: Shortcut 1 — Long Press
       selector:
         action: {}
       default: []
 
-    shortcut_2_short:
-      name: Shortcut 2 — Short Press Action
+    shortcut_2_single:
+      name: Shortcut 2 — Short Press
       selector:
         action: {}
       default: []
     shortcut_2_long:
-      name: Shortcut 2 — Long Press Action
+      name: Shortcut 2 — Long Press
       selector:
         action: {}
       default: []
 
-    shortcut_3_short:
-      name: Shortcut 3 — Short Press Action
+    shortcut_3_single:
+      name: Shortcut 3 — Short Press
       selector:
         action: {}
       default: []
     shortcut_3_long:
-      name: Shortcut 3 — Long Press Action
+      name: Shortcut 3 — Long Press
       selector:
         action: {}
       default: []
 
-    shortcut_4_short:
-      name: Shortcut 4 — Short Press Action
+    shortcut_4_single:
+      name: Shortcut 4 — Short Press
       selector:
         action: {}
       default: []
     shortcut_4_long:
-      name: Shortcut 4 — Long Press Action
+      name: Shortcut 4 — Long Press
       selector:
         action: {}
       default: []
@@ -245,257 +245,20 @@ blueprint:
 trigger:
   - platform: event
     event_type: esphome.remote_button_pressed
+    event_data:
+      remote_id: !input remote_id
 
 action:
   - choose:
-      # ===== POWER =====
       - conditions:
           - condition: template
             value_template: "{{ trigger.event.data.button == 'power' and trigger.event.data.type == 'single' }}"
         sequence:
-          - !input power_short
+          - !input power_single
       - conditions:
           - condition: template
             value_template: "{{ trigger.event.data.button == 'power' and trigger.event.data.type == 'long' }}"
         sequence:
           - !input power_long
 
-      # ===== BACK =====
       - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'back' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input back_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'back' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input back_long
-
-      # ===== HOME =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'home' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input home_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'home' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input home_long
-
-      # ===== PLAY/PAUSE =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'play_pause' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input play_pause_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'play_pause' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input play_pause_long
-
-      # ===== UP =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'up' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input up_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'up' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input up_long
-
-      # ===== LEFT =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'left' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input left_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'left' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input left_long
-
-      # ===== SELECT =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'select_button' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input select_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'select_button' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input select_long
-
-      # ===== RIGHT =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'right' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input right_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'right' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input right_long
-
-      # ===== DOWN =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'down' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input down_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'down' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input down_long
-
-      # ===== VOLUME UP =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'volume_up' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input volume_up_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'volume_up' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input volume_up_long
-
-      # ===== VOLUME DOWN =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'volume_down' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input volume_down_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'volume_down' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input volume_down_long
-
-      # ===== MUTE =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'mute' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input mute_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'mute' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input mute_long
-
-      # ===== CHANNEL UP =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'channel_up' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input channel_up_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'channel_up' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input channel_up_long
-
-      # ===== CHANNEL DOWN =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'channel_down' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input channel_down_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'channel_down' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input channel_down_long
-
-      # ===== SETTINGS =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'settings' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input settings_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'settings' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input settings_long
-
-      # ===== BRIGHTNESS UP =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'brightness_up' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input brightness_up_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'brightness_up' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input brightness_up_long
-
-      # ===== BRIGHTNESS DOWN =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'brightness_down' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input brightness_down_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'brightness_down' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input brightness_down_long
-
-      # ===== SHORTCUT 1 =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'shortcut_1' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input shortcut_1_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'shortcut_1' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input shortcut_1_long
-
-      # ===== SHORTCUT 2 =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'shortcut_2' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input shortcut_2_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'shortcut_2' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input shortcut_2_long
-
-      # ===== SHORTCUT 3 =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'shortcut_3' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input shortcut_3_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'shortcut_3' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input shortcut_3_long
-
-      # ===== SHORTCUT 4 =====
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'shortcut_4' and trigger.event.data.type == 'single' }}"
-        sequence:
-          - !input shortcut_4_short
-      - conditions:
-          - condition: template
-            value_template: "{{ trigger.event.data.button == 'shortcut_4' and trigger.event.data.type == 'long' }}"
-        sequence:
-          - !input shortcut_4_long
